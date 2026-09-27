@@ -1,23 +1,69 @@
 aid: beast-enterprises
+
 name: Beast Enterprises
-description: 'Beast Enterprises is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+
+description: Beast Enterprises appears in the API Evangelist harvest as a placeholder entry derived from secondary‑market sources. At present,
+  no public website, corporate landing page, or API documentation can be located for this entity. The available data consists solely of minimal
+  metadata such as the company name and a brief note that it is a stub awaiting further information. This entry is retained in the network to
+  enable future enrichment should verifiable sources, official documentation, or a functional API become discoverable.
+
 url: https://raw.githubusercontent.com/api-evangelist/beast-enterprises/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
 - Company
-apis: []
+- Placeholder
+- Stub
+- API-Evangelist
+- Harvest
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Vendors
+  url: vendors/beast-enterprises-vendors.yml
+- type: Hosts
+  url: hosts/beast-enterprises-hosts.yml
 - type: Website
   url: https://www.nasdaqprivatemarket.com/
+- type: DomainSecurity
+  url: security/beast-enterprises-domain-security.yml
+
+apis:
+- name: Beast Enterprises API
+  description: Nasdaq Private Market platform offering liquidity solutions, investment platform, data & intelligence for private companies and
+    investors.
+  humanURL: https://www.nasdaqprivatemarket.com/
+  baseURL: null
+  aid: beast-enterprises:beast-enterprises-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Main website renders content via JavaScript, preventing automated extraction of API specifications.
+  evidence:
+  - url: https://www.nasdaqprivatemarket.com/
+    status: 200
+  checked: '2026-09-27'
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
